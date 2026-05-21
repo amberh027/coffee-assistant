@@ -10,8 +10,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f4ede4' rx='50'/><path d='M30 42h34v22c0 9-7 14-17 14s-17-5-17-14V42z' fill='%23ffffff' stroke='%233d2b1f' stroke-width='4' stroke-linejoin='round'/><path d='M64 48h6c3 0 5 2 5 5s-2 5-5 5h-6' fill='none' stroke='%233d2b1f' stroke-width='4' stroke-linecap='round'/><path d='M36 42c0-4 3-8 8-8s8 4 8 8' fill='%23ffffff' stroke='%233d2b1f' stroke-width='4'/><path d='M48 42c0-4 3-8 8-8s8 4 8 8' fill='%23ffffff' stroke='%233d2b1f' stroke-width='4'/><circle cx='41' cy='39' r='2' fill='%233d2b1f'/><circle cx='53' cy='39' r='2' fill='%233d2b1f'/><circle cx='38' cy='49' r='2.5' fill='%233d2b1f'/><circle cx='56' cy='49' r='2.5' fill='%233d2b1f'/><path d='M45 53c1 1 3 1 4 0' fill='none' stroke='%233d2b1f' stroke-width='2' stroke-linecap='round'/><ellipse cx='48' cy='62' rx='5' ry='3.5' fill='%23c68e5a'/></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f4ede4' rx='24'/><path d='M30 42h34v22c0 9-7 14-17 14s-17-5-17-14V42z' fill='%23ffffff' stroke='%233d2b1f' stroke-width='4' stroke-linejoin='round'/><path d='M64 48h6c3 0 5 2 5 5s-2 5-5 5h-6' fill='none' stroke='%233d2b1f' stroke-width='4' stroke-linecap='round'/><path d='M36 42c0-4 3-8 8-8s8 4 8 8' fill='%23ffffff' stroke='%233d2b1f' stroke-width='4'/><path d='M48 42c0-4 3-8 8-8s8 4 8 8' fill='%23ffffff' stroke='%233d2b1f' stroke-width='4'/><circle cx='41' cy='39' r='2' fill='%233d2b1f'/><circle cx='53' cy='39' r='2' fill='%233d2b1f'/><circle cx='38' cy='49' r='2.5' fill='%233d2b1f'/><circle cx='56' cy='49' r='2.5' fill='%233d2b1f'/><path d='M45 53c1 1 3 1 4 0' fill='none' stroke='%233d2b1f' stroke-width='2' stroke-linecap='round'/><ellipse cx='48' cy='62' rx='5' ry='3.5' fill='%23c68e5a'/></svg>">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
 
     <style>
         :root {
@@ -138,7 +139,7 @@
         summary::after { content: ""; width: 7px; height: 7px; border-right: 2px solid var(--primary-color); border-bottom: 2px solid var(--primary-color); transform: rotate(45deg); transition: transform 0.25s ease; margin-right: 4px; }
         details[open] summary::after { transform: rotate(-135deg); }
         
-        /* 核心稳定修改：默认隐藏内容区域，只有当有 [open] 标签时才展示，彻底物理防拉开 */
+        /* 核心修改点：默认隐藏内容区域，只有当有 [open] 标签时才展示 */
         .recipe-details-box .details-content { display: none; }
         .recipe-details-box[open] .details-content { 
             padding: 24px 20px; 
@@ -192,24 +193,8 @@
         </div>
     </div>
 
-    <div class="input-group">
-        <label for="recipe">选择冲煮方案:</label>
-        <select id="recipe" onchange="onRecipeChange()">
-            <option value="classic">经典三段式</option>
-            <option value="four_six">粕谷哲 四六冲煮法</option>
-            <option value="one_pour">极致一刀流</option>
-            <option value="carlos">Carlos Medina 五段精准法</option>
-            <option value="du">杜嘉宁 高温快冲法</option>
-        </select>
-    </div>
-
-    <div class="input-group" id="ratioContainer">
-        <label for="ratio">调节粉水比:</label>
-        <select id="ratio">
-            <option value="16">1 : 16</option>
-            <option value="15">1 : 15</option>
-        </select>
-    </div>
+    <div class="input-group"><label for="recipe">选择冲煮方案:</label><select id="recipe" onchange="onRecipeChange()"><option value="classic">经典三段式</option><option value="four_six">粕谷哲 四六冲煮法</option><option value="one_pour">极致一刀流 (干净通透)</option><option value="carlos">Carlos Medina 五段精准法</option><option value="du">杜嘉宁 高温快冲法</option></select></div>
+    <div class="input-group" id="ratioContainer"><label for="ratio">调节粉水比:</label><select id="ratio"><option value="16">1 : 16</option><option value="15">1 : 15</option></select></div>
 
     <details class="recipe-details-box" id="recipeDetails"><summary>查看当前方案策略详述</summary><div class="details-content"><div class="info-item"><span class="info-label">推荐水温</span><span class="info-value" id="viewTemp">-</span></div><div class="info-item"><span class="info-label">推荐器具</span><span class="info-value" id="viewGear">-</span></div><div class="info-item"><span class="info-label">研磨度锚点</span><span class="info-value" id="viewGrind">-</span></div><div class="info-item"><span class="info-label">预估时间</span><span class="info-value" id="viewTime">-</span></div><div class="info-item full-width"><span class="info-label">风味特征表现</span><span class="info-value" id="viewFlavor">-</span></div></div></details>
     
@@ -298,7 +283,7 @@
         document.getElementById('recipeDetails').removeAttribute('open'); 
     }
 
-    // 彻底解耦，并强力物理锁定
+    // 彻底解耦：页面初始化只同步数据，绝不碰 DOM 展开状态
     window.onload = function() {
         updateRecipeDetailsView();
         document.getElementById('recipeDetails').removeAttribute('open');
