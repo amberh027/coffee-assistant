@@ -221,12 +221,13 @@
 
     const recipes = {
         "classic": { hasDynamicRatio: true, temp: "91℃ - 93℃", gear: "V60 / 蛋糕滤杯", grind: "中等研磨", time: "2'15\" - 2'45\"", flavor: "酸甜均衡，层次感清晰，容错率极高，适合日常基准测试。", steps: [ { name: "第一段 (闷蒸)", percentage: 0.20, note: "充分打湿粉床，闷蒸30秒，释放二氧化碳。" }, { name: "第二段 (核心萃取)", percentage: 0.40, note: "向外绕圈，稳定水流，逼出中段高甜感。" }, { name: "第三段 (尾段稀释)", percentage: 0.40, note: "平稳中心注水，避免过度扰动引起尾段苦涩。" } ] },
-        "four_six": { hasDynamicRatio: false, fixedRatio: 15, temp: "92℃ - 93℃", gear: "Hario V60", grind: "粗研磨 (粗砂糖感)", time: "3'15\" - 3'30\"", flavor: "高醇厚度与干净度。通过前两段水量平衡酸甜，后三段决定浓度。", steps: [ { name: "第一段 (决定酸度)", percentage: 0.20, note: "前40%的第一段。若想偏甜，可适当减少此段水量。" }, { name: "第二段 (决定甜度)", percentage: 0.20, note: "前40%的第二段。注入完成等待水完全流下（约1'00\"）。" }, { name: "第三段 (提升浓度)", percentage: 0.20, note: "后60%均分三段的开始。每次等水流干后再注下一段。" }, { name: "第四段 (提升浓度)", percentage: 0.20, note: "保持断水节奏，精准对齐克重。" }, { name: "第五段 (最后收尾)", percentage: 0.20, note: "注满最后1/5水量，静置等待滴滤完成。" } ] },
+        "four_six": { hasDynamicRatio: false, fixedRatio: 15, temp: "92℃ - 93℃", gear: "Hario V60", grind: "粗研磨 (粗砂糖感)", time: "3'15\" - 3'30\"", flavor: "高醇厚度与干净度。通过前两段水量平衡酸甜，后三段决定浓度。", steps: [ { name: "第一段 (决定酸度)", percentage: 0.20, note: "前40%的第一段。若想偏甜，可适当减少此段水量。" }, { name: "第二段 (决定甜度)", percentage: 0.20, note: "前40%的第二段. 注入完成等待水完全流下（约1'00\"）。" }, { name: "第三段 (提升浓度)", percentage: 0.20, note: "后60%均分三段的开始。每次等水流干后再注下一段。" }, { name: "第四段 (提升浓度)", percentage: 0.20, note: "保持断水节奏，精准对齐克重。" }, { name: "第五段 (最后收尾)", percentage: 0.20, note: "注满最后1/5水量，静置等待滴滤完成。" } ] },
         "one_pour": { hasDynamicRatio: false, fixedRatio: 16, temp: "90℃ - 92℃", gear: "V60 / Origami", grind: "中细研磨", time: "1'50\" - 2'10\"", flavor: "口感极为干净、通透，没有多次断水带来的杂质扰动。", steps: [ { name: "第一段 (充分闷蒸)", percentage: 0.20, note: "使用两倍于粉重的水量充分浸润，闷蒸30秒。" }, { name: "第二段 (一刀流拉满)", percentage: 0.80, note: "中心温柔注水，不间断地缓慢提高水位至总克重，随后静置。" } ] },
         "carlos": { hasDynamicRatio: false, fixedRatio: 16.1, temp: "91℃", gear: "Orea V3 / 平底滤杯", grind: "中粗研磨", time: "2'30\" (每段严格隔30s)", flavor: "极致的物理均匀度，风味极为清晰，呈现极其高雅的甜感。", steps: [ { name: "第一段 (0:00 闷蒸)", percentage: 0.20, note: "精确绕圈，打湿每一颗粉末。" }, { name: "第二段 (0:30 注水)", percentage: 0.20, note: "保持固定的注水高度和画圈半径。" }, { name: "第三段 (1:00 注水)", percentage: 0.20, note: "严格控制水流力度，避免过度扰动。" }, { name: "第四段 (1:30 注水)", percentage: 0.20, note: "细水流稳定推进。" }, { name: "第五段 (2:00 精准收尾)", percentage: 0.20, note: "最后一段注入，等待滤滤流干。" } ] },
         "du": { hasDynamicRatio: false, fixedRatio: 15, temp: "94℃ (高温萃取)", gear: "Origami (高流速)", grind: "极细研磨", time: "1'40\" (快打战术)", flavor: "爆炸般的花果香气，极高的萃取率带来扎实的醇厚度与爆发力。", steps: [ { name: "第一段 (快冲闷蒸)", percentage: 0.20, note: "大水流（约6g/s）快速注入，迅速打湿粉床，激活酸质。" }, { name: "第二段 (中心控速)", percentage: 0.3333, note: "放缓水流至4g/s，中心绕小圈，延长接触时间逼出醇厚度。" }, { name: "第三段 (大水流收尾)", percentage: 0.4667, note: "恢复5g/s大水流冲刺至总量，务必在1分40秒内结束冲煮。" } ] }
     };
 
+    // 核心微调：将数据注入函数与状态控制彻底解耦
     function updateRecipeDetailsView() { 
         const recipeKey = document.getElementById('recipe').value; 
         const recipe = recipes[recipeKey]; 
@@ -235,6 +236,7 @@
         document.getElementById('viewGrind').innerText = recipe.grind; 
         document.getElementById('viewTime').innerText = recipe.time; 
         document.getElementById('viewFlavor').innerText = recipe.flavor; 
+        
         const ratioContainer = document.getElementById('ratioContainer'); 
         if (recipe.hasDynamicRatio) { 
             ratioContainer.style.display = 'block'; 
@@ -243,14 +245,42 @@
         } 
     }
     
-    // 💡 优化点：切换方案时，也让面板自觉保持闭合
+    // 切换方案时：灌入新方案的数据，但强制移除 open 属性，绝对保持闭合状态
     function onRecipeChange() { 
         updateRecipeDetailsView(); 
         document.getElementById('resultBox').style.display = 'none'; 
         document.getElementById('recipeDetails').removeAttribute('open');
     }
     
-    function calculateBrew() { const beans = parseFloat(document.getElementById('beans').value); const recipeKey = document.getElementById('recipe').value; const recipe = recipes[recipeKey]; if (!beans || beans <= 0) { alert("请输入正确的咖啡豆克重！"); return; } let activeRatio = recipe.hasDynamicRatio ? parseFloat(document.getElementById('ratio').value) : recipe.fixedRatio; const totalWater = beans * activeRatio; document.getElementById('currentRatio').innerText = `1 : ${activeRatio}`; document.getElementById('totalWater').innerText = totalWater.toFixed(1); const stepsList = document.getElementById('stepsList'); stepsList.innerHTML = ''; let cumulativeWater = 0; recipe.steps.forEach((step) => { const stepWater = totalWater * step.percentage; cumulativeWater += stepWater; const stepDiv = document.createElement('div'); stepDiv.className = 'step'; stepDiv.innerHTML = `<div class="step-title"><span>${step.name}</span><span style="font-size:11px; color:var(--text-muted);">权重 ${(step.percentage * 100).toFixed(0)}%</span></div><div class="step-details">电子秤注水至：<strong style="color:var(--primary-color); font-size:17px;">${cumulativeWater.toFixed(1)}g</strong> <span style="color:var(--text-muted); font-size:13px;">(本段注入 ${stepWater.toFixed(1)}g)</span></div><div class="step-note">${step.note}</div>`; stepsList.appendChild(stepDiv); }); document.getElementById('resultBox').style.display = 'block'; document.getElementById('recipeDetails').removeAttribute('open'); }
+    function calculateBrew() { 
+        const beans = parseFloat(document.getElementById('beans').value); 
+        const recipeKey = document.getElementById('recipe').value; 
+        const recipe = recipes[recipeKey]; 
+        if (!beans || beans <= 0) { alert("请输入正确的咖啡豆克重！"); return; } 
+        
+        let activeRatio = recipe.hasDynamicRatio ? parseFloat(document.getElementById('ratio').value) : recipe.fixedRatio; 
+        const totalWater = beans * activeRatio; 
+        document.getElementById('currentRatio').innerText = `1 : ${activeRatio}`; 
+        document.getElementById('totalWater').innerText = totalWater.toFixed(1); 
+        
+        const stepsList = document.getElementById('stepsList'); 
+        stepsList.innerHTML = ''; 
+        let cumulativeWater = 0; 
+        
+        recipe.steps.forEach((step) => { 
+            const stepWater = totalWater * step.percentage; 
+            cumulativeWater += stepWater; 
+            const stepDiv = document.createElement('div'); 
+            stepDiv.className = 'step'; 
+            stepDiv.innerHTML = `<div class="step-title"><span>${step.name}</span><span style="font-size:11px; color:var(--text-muted);">权重 ${(step.percentage * 100).toFixed(0)}%</span></div><div class="step-details">电子秤注水至：<strong style="color:var(--primary-color); font-size:17px;">${cumulativeWater.toFixed(1)}g</strong> <span style="color:var(--text-muted); font-size:13px;">(本段注入 ${stepWater.toFixed(1)}g)</span></div><div class="step-note">${step.note}</div>`; 
+            stepsList.appendChild(stepDiv); 
+        }); 
+        
+        document.getElementById('resultBox').style.display = 'block'; 
+        document.getElementById('recipeDetails').removeAttribute('open'); 
+    }
+
+    // 网页加载时初始化：灌入默认的经典三段式数据，但由于 HTML 里没加 open，它会维持完美的折叠原貌
     window.onload = updateRecipeDetailsView;
 </script>
 
