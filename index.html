@@ -10,9 +10,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
-    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAXNSR0IArs4c6QAAG65JREFUeF7tnXecHMXVwH+vR8coBywCBwIEAsEgcsZgMGCbYBMscsYgcg4gcsZgcsYgcsYgcsYgcssZg8mZgDFAgAicvR6d37fTM7vSre7N7e3t3e3tVf8gd6uqp6f6vX7vVb169SjYxhpYgAaswALUY02wDTWwADbAsE0BC2wGhm2RWTIDNMDYNoAFNMCwLQE7gG0N2AEM2wawA9jWgB3AsG0AO4BtDdgBDNsGsAPY1oAdwLBtADuAbQ3YAbS3DTAn0N4asANYe9vAnED7a8AOYO1tA3MC7a8BO4C1tw3MCbS3BuyA1t42MCfQ/hqwA1p728CcQPtrwA5o7W0DcwLtrwE7oLW3DcwJtL8G7IDW3jYwJ9D+GrADWHvbwJxA+2vADmDtbQNzAu2vATugtbcNzAm0vwbsgNbeNjAn0P4asANYe9vAnED7a8AOYO1tA3MC7a8BO4C1tw3MCbS3BuyA1t42MCfQ/hqwA1p728CcQPtrwA5o7W5Dc1/D9v6/Bv6SgOn+v6a2g7W2BjTAtbZ97Nf9XwMMjO0w7AosVAM6V/v/o9nvsAs4v7bU/P/BAnat6Vb/t/AasHwNMMCy34wF7EIDv6qBHQD/qof2/0czMMCyNfCrGhgA26+fV9p/GGBgu8ACdvyvBga2D/xrHtqOGWA9sAAGWLYGbL/9P7R9MMDAtv8HYFf7f9gO2K+fV9p+GGDApvnXwAAY2Py90fbFAAM2z78GBsDA5u+Nti8GGNiY9BqI9iAAsK6VNoatXQPWf68Ba9D69S3bAtvUAAOw/T8MMPDfrwED7NfPL23/P/mG19N0LTDNAAAAAElFTkSuQmCC">
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAXNSR0IArs4c6QAAG65JREFUeF7tnXecHMXVwH+vR8coBywCBwIEAsEgcsZgMGCbYBMscsYgcg4gcsZgcsYgcsYgcsYgcssZg8mZgDFAgAicvR6d37fTM7vSre7N7e3t3e3tVf8gd6uqp6f6vX7vVb169SjYxhpYgAaswALUY02wDTWwADbAsE0BC2wGhm2RWTIDNMDYNoAFNMCwLQE7gG0N2AEM2wawA9jWgB3AsG0AO4BtDdgBDNsGsAPY1oAdwLBtADuAbQ3YAbS3DTAn0N4asANYe9vAnED7a8AOYO1tA3MC7a8BO4C1tw3MCbS3BuyA1t42MCfQ/hqwA1p728CcQPtrwA5o7W0DcwLtrwE7oLW3DcwJtL8G7IDW3jYwJ9D+GrADWHvbwJxA+2vADmDtbQNzAu2vATugtbcNzAm0vwbsgNbeNjAn0P4asANYe9vAnED7a8AOYO1tA3MC7a8BO4C1tw3MCbS3BuyA1t42MCfQ/hqwA1p728CcQPtrwA5o7W5Dc1/D9v6/Bv6SgOn+v6a2g7W2BjTAtbZ97Nf9XwMMjO0w7AosVAM6V/v/o9nvsAs4v7bU/P/BAnat6Vb/t/AasHwNMMCy34wF7EIDv6qBHQD/qof2/0czMMCyNfCrGhgA26+fV9p/GGBgu8ACdvyvBga2D/xrHtqOGWA9sAAGWLYGbL/9P7R9MMDAtv8HYFf7f9gO2K+fV9p+GGDApvnXwAAY2Py90fbFAAM2z78GBsDA5u+Nti8GGNiY9BqI9iAAsK6VNoatXQPWf68Ba9D69S3bAtvUAAOw/T8MMPDfrwED7NfPL23/P/mG19N0LTDNAAAAAElFTkSuQmCC">
 
     <style>
         :root {
@@ -71,8 +70,8 @@
             letter-spacing: 0.5px;
         }
 
-        /* 输入框外框 */
-        .input-stepper-wrapper {
+        /* 统一输入框和下拉框的外框样式 */
+        .input-stepper-wrapper, .select-wrapper {
             display: flex;
             align-items: center;
             border: 1px solid var(--border-color);
@@ -80,9 +79,11 @@
             background-color: #fff;
             overflow: hidden;
             transition: all 0.25s ease;
+            box-sizing: border-box;
+            width: 100%;
         }
 
-        .input-stepper-wrapper:focus-within {
+        .input-stepper-wrapper:focus-within, .select-wrapper:focus-within {
             border-color: var(--primary-color);
             box-shadow: 0 0 0 4px rgba(61, 43, 31, 0.05);
         }
@@ -96,6 +97,7 @@
             background: transparent;
             outline: none;
             -moz-appearance: textfield;
+            width: 100%;
         }
         input[type="number"]::-webkit-inner-spin-button,
         input[type="number"]::-webkit-outer-spin-button {
@@ -109,6 +111,7 @@
             width: 48px;
             height: 54px;
             border-left: 1px solid var(--border-color);
+            flex-shrink: 0;
         }
 
         .step-btn {
@@ -129,17 +132,44 @@
         .step-btn:active { background: #f4ede4; }
         .step-btn.up { border-bottom: 1px solid var(--border-color); }
 
-        select { width: 100%; padding: 16px 18px; border: 1px solid var(--border-color); border-radius: 16px; box-sizing: border-box; font-size: 16px; background-color: #fff; color: var(--text-main); transition: all 0.25s ease; }
-        select:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 4px rgba(61, 43, 31, 0.05); }
+        /* 优化下拉选择框样式，限制滚轮区域使其完美对齐重量框 */
+        select { 
+            width: 100%; 
+            padding: 16px 40px 16px 18px; /* 右侧留出空间给自定义箭头 */
+            border: none; 
+            font-size: 16px; 
+            background: transparent; 
+            color: var(--text-main); 
+            outline: none;
+            cursor: pointer;
+            -webkit-appearance: none; /* 清除原生超大箭头 */
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        /* 自定义下拉箭头，将其精准摆放在和上方加减号按钮等宽的右侧区域 */
+        .select-wrapper {
+            position: relative;
+        }
+        .select-wrapper::after {
+            content: "▼";
+            font-size: 10px;
+            color: var(--primary-color);
+            position: absolute;
+            right: 18px;
+            pointer-events: none;
+            opacity: 0.7;
+        }
 
         #ratioContainer { display: block; background-color: #faf7f2; padding: 18px; border-radius: 18px; border: 1px dashed var(--border-color); }
+        #ratioContainer label { margin-bottom: 10px; }
+        
         .recipe-details-box { margin-top: 25px; border: 1px solid var(--border-color); border-radius: 18px; overflow: hidden; background: var(--highlight-bg); }
         
         summary { padding: 16px 20px; background: #f4ede4; color: var(--primary-color); font-weight: 700; font-size: 13px; letter-spacing: 1px; cursor: pointer; outline: none; user-select: none; display: flex; justify-content: space-between; align-items: center; }
         summary::after { content: ""; width: 7px; height: 7px; border-right: 2px solid var(--primary-color); border-bottom: 2px solid var(--primary-color); transform: rotate(45deg); transition: transform 0.25s ease; margin-right: 4px; }
         details[open] summary::after { transform: rotate(-135deg); }
         
-        /* 核心修改点：默认隐藏内容区域，只有当有 [open] 标签时才展示 */
         .recipe-details-box .details-content { display: none; }
         .recipe-details-box[open] .details-content { 
             padding: 24px 20px; 
@@ -182,19 +212,37 @@
     
     <div class="input-group">
         <label for="beans">咖啡粉重量 (克):</label>
-        <div class="custom-spinner-container">
-            <div class="input-stepper-wrapper">
-                <input type="number" id="beans" value="15.0" min="5" max="50" step="0.1" inputmode="decimal">
-                <div class="stepper-buttons">
-                    <button class="step-btn up" onclick="adjustBeans(0.1)" type="button" aria-label="增加0.1克">▲</button>
-                    <button class="step-btn down" onclick="adjustBeans(-0.1)" type="button" aria-label="减少0.1克">▼</button>
-                </div>
+        <div class="input-stepper-wrapper">
+            <input type="number" id="beans" value="15.0" min="5" max="50" step="0.1" inputmode="decimal">
+            <div class="stepper-buttons">
+                <button class="step-btn up" onclick="adjustBeans(0.1)" type="button" aria-label="增加0.1克">▲</button>
+                <button class="step-btn down" onclick="adjustBeans(-0.1)" type="button" aria-label="减少0.1克">▼</button>
             </div>
         </div>
     </div>
 
-    <div class="input-group"><label for="recipe">选择冲煮方案:</label><select id="recipe" onchange="onRecipeChange()"><option value="classic">经典三段式</option><option value="four_six">粕谷哲 四六冲煮法</option><option value="one_pour">极致一刀流 (干净通透)</option><option value="carlos">Carlos Medina 五段精准法</option><option value="du">杜嘉宁 高温快冲法</option></select></div>
-    <div class="input-group" id="ratioContainer"><label for="ratio">调节粉水比:</label><select id="ratio"><option value="16">1 : 16</option><option value="15">1 : 15</option></select></div>
+    <div class="input-group">
+        <label for="recipe">选择冲煮方案:</label>
+        <div class="select-wrapper">
+            <select id="recipe" onchange="onRecipeChange()">
+                <option value="classic">经典三段式</option>
+                <option value="four_six">粕谷哲 四六冲煮法</option>
+                <option value="one_pour">极致一刀流 (干净通透)</option>
+                <option value="carlos">Carlos Medina 五段精准法</option>
+                <option value="du">杜嘉宁 高温快冲法</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="input-group" id="ratioContainer">
+        <label for="ratio">调节粉水比:</label>
+        <div class="select-wrapper">
+            <select id="ratio">
+                <option value="16">1 : 16</option>
+                <option value="15">1 : 15</option>
+            </select>
+        </div>
+    </div>
 
     <details class="recipe-details-box" id="recipeDetails"><summary>查看当前方案策略详述</summary><div class="details-content"><div class="info-item"><span class="info-label">推荐水温</span><span class="info-value" id="viewTemp">-</span></div><div class="info-item"><span class="info-label">推荐器具</span><span class="info-value" id="viewGear">-</span></div><div class="info-item"><span class="info-label">研磨度锚点</span><span class="info-value" id="viewGrind">-</span></div><div class="info-item"><span class="info-label">预估时间</span><span class="info-value" id="viewTime">-</span></div><div class="info-item full-width"><span class="info-label">风味特征表现</span><span class="info-value" id="viewFlavor">-</span></div></div></details>
     
@@ -203,11 +251,24 @@
 </div>
 
 <script>
-    // PWA 注册
+    // PWA 注册与 Service Worker 更新检查
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('./sw.js')
-                .then(reg => console.log('PWA 离线管家就位。'))
+                .then(reg => {
+                    console.log('PWA 离线管家就位。');
+                    // 如果 sw.js 有更新，强制让新服务工作线程接管，以便尽早刷新可能存在的图标缓存
+                    reg.onupdatefound = () => {
+                        const installingWorker = reg.installing;
+                        if (installingWorker) {
+                            installingWorker.onstatechange = () => {
+                                if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    console.log('新内容已就绪，请刷新页面。');
+                                }
+                            };
+                        }
+                    };
+                })
                 .catch(err => console.log(err));
         });
     }
@@ -283,7 +344,6 @@
         document.getElementById('recipeDetails').removeAttribute('open'); 
     }
 
-    // 彻底解耦：页面初始化只同步数据，绝不碰 DOM 展开状态
     window.onload = function() {
         updateRecipeDetailsView();
         document.getElementById('recipeDetails').removeAttribute('open');
