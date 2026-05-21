@@ -9,6 +9,7 @@
     <meta name="theme-color" content="#3d2b1f">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%233d2b1f'><path d='M30 35h35v30c0 10-8 15-17.5 15S30 75 30 65V35z'/><path fill='none' stroke='%233d2b1f' stroke-width='6' stroke-linecap='round' d='M65 42h8c5 0 7 4 7 8s-2 8-7 8h-8'/><path fill='none' stroke='%23c68e5a' stroke-width='5' stroke-linecap='round' d='M25 20c2 3 0 7 3 10M38 18c1 4-1 7 2 10M50 21c2 3 0 6 2 9'/></svg>">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%233d2b1f'><rect width='100' height='100' fill='%23f4ede4' rx='20'/><path d='M30 40h35v25c0 8-7 13-17.5 13S30 73 30 65V40z'/><path fill='none' stroke='%233d2b1f' stroke-width='5' stroke-linecap='round' d='M65 46h6c4 0 6 3 6 6.5s-2 6.5-6 6.5h-6'/></svg>">
 
@@ -69,7 +70,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* 微信完美兼容：自构整体输入框外框 */
+        /* 微信完美兼容的垂直方向手绘几何步进器 */
         .input-stepper-wrapper {
             display: flex;
             align-items: center;
@@ -85,7 +86,6 @@
             box-shadow: 0 0 0 4px rgba(61, 43, 31, 0.05);
         }
 
-        /* 隐藏所有原生箭头的输入框 */
         input[type="number"] {
             flex-grow: 1;
             padding: 16px 18px;
@@ -102,7 +102,6 @@
             margin: 0;
         }
 
-        /* 右侧垂直排列的抽象上下箭头触控区 */
         .stepper-buttons {
             display: flex;
             flex-direction: column;
@@ -130,27 +129,29 @@
             background: #f4ede4;
         }
 
-        /* 上下按钮中间的轻量分割线 */
         .step-btn.up {
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* 方案选择与下拉样式 */
         select { width: 100%; padding: 16px 18px; border: 1px solid var(--border-color); border-radius: 16px; box-sizing: border-box; font-size: 16px; background-color: #fff; color: var(--text-main); transition: all 0.25s ease; }
         select:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 4px rgba(61, 43, 31, 0.05); }
 
         #ratioContainer { display: block; background-color: #faf7f2; padding: 18px; border-radius: 18px; border: 1px dashed var(--border-color); }
         .recipe-details-box { margin-top: 25px; border: 1px solid var(--border-color); border-radius: 18px; overflow: hidden; background: var(--highlight-bg); }
+        
         summary { padding: 16px 20px; background: #f4ede4; color: var(--primary-color); font-weight: 700; font-size: 13px; letter-spacing: 1px; cursor: pointer; outline: none; user-select: none; display: flex; justify-content: space-between; align-items: center; }
         summary::after { content: ""; width: 7px; height: 7px; border-right: 2px solid var(--primary-color); border-bottom: 2px solid var(--primary-color); transform: rotate(45deg); transition: transform 0.25s ease; margin-right: 4px; }
         details[open] summary::after { transform: rotate(-135deg); }
+        
         .details-content { padding: 24px 20px; font-size: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: #fff; }
         .info-item { display: flex; flex-direction: column; gap: 4px; }
         .info-item.full-width { grid-column: span 2; border-top: 1px dashed #f0eae1; padding-top: 16px; }
         .info-label { font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
         .info-value { color: var(--text-main); font-weight: 600; font-size: 14.5px; }
+        
         button#mainBtn { width: 100%; padding: 18px; background-color: var(--primary-color); color: #fff; border: none; border-radius: 16px; font-size: 16px; font-weight: 700; letter-spacing: 2px; cursor: pointer; margin-top: 24px; transition: all 0.2s ease; }
         button#mainBtn:hover { background-color: #261b13; box-shadow: 0 8px 20px rgba(61, 43, 31, 0.15); }
+        
         .result { margin-top: 30px; padding: 24px 20px; background-color: var(--highlight-bg); border-radius: 20px; border: 1px solid var(--border-color); border-top: 4px solid var(--primary-color); display: none; }
         .result h3 { margin: 0 0 18px 0; color: var(--primary-color); font-size: 16px; font-weight: 800; letter-spacing: 1px; }
         .total-highlight { font-size: 14px; margin-bottom: 24px; background: #f4ede4; padding: 16px; border-radius: 12px; color: var(--primary-color); line-height: 1.6; }
@@ -190,13 +191,14 @@
     <div class="input-group"><label for="recipe">选择冲煮方案:</label><select id="recipe" onchange="onRecipeChange()"><option value="classic">经典三段式 (均衡基石)</option><option value="four_six">粕谷哲 四六冲煮法 (风味定制)</option><option value="one_pour">极致一刀流 (干净通透)</option><option value="carlos">Carlos Medina 五段精准法 (世界冠军)</option><option value="du">杜嘉宁 高温快冲法 (世界冠军)</option></select></div>
     <div class="input-group" id="ratioContainer"><label for="ratio">调节粉水比:</label><select id="ratio"><option value="16">1 : 16 (轻盈明亮，拉伸花果香)</option><option value="15">1 : 15 (醇厚饱满，风味更扎实)</option></select></div>
 
-    <details class="recipe-details-box" id="recipeDetails" open><summary>查看当前方案策略详述</summary><div class="details-content"><div class="info-item"><span class="info-label">推荐水温</span><span class="info-value" id="viewTemp">-</span></div><div class="info-item"><span class="info-label">推荐器具</span><span class="info-value" id="viewGear">-</span></div><div class="info-item"><span class="info-label">研磨度锚点</span><span class="info-value" id="viewGrind">-</span></div><div class="info-item"><span class="info-label">预估时间</span><span class="info-value" id="viewTime">-</span></div><div class="info-item full-width"><span class="info-label">风味特征表现</span><span class="info-value" id="viewFlavor">-</span></div></div></details>
+    <details class="recipe-details-box" id="recipeDetails"><summary>查看当前方案策略详述</summary><div class="details-content"><div class="info-item"><span class="info-label">推荐水温</span><span class="info-value" id="viewTemp">-</span></div><div class="info-item"><span class="info-label">推荐器具</span><span class="info-value" id="viewGear">-</span></div><div class="info-item"><span class="info-label">研磨度锚点</span><span class="info-value" id="viewGrind">-</span></div><div class="info-item"><span class="info-label">预估时间</span><span class="info-value" id="viewTime">-</span></div><div class="info-item full-width"><span class="info-label">风味特征表现</span><span class="info-value" id="viewFlavor">-</span></div></div></details>
+    
     <button onclick="calculateBrew()" id="mainBtn">生成今日冲煮看板</button>
     <div id="resultBox" class="result"><h3>冲煮看板</h3><div class="total-highlight">设定比例：<strong><span id="currentRatio"></span></strong><br>目标总注水量：<strong id="totalWater" style="color:var(--accent-color); font-size:20px;"></strong> <strong>克</strong></div><div id="stepsList"></div></div>
 </div>
 
 <script>
-    // ================= PWA 离线 Service Worker 注册核心脚本 =================
+    // PWA 离线 Service Worker 注册脚本
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('./sw.js')
@@ -204,9 +206,7 @@
                 .catch(err => console.log('PWA 注册失败：', err));
         });
     }
-    // =====================================================================
 
-    // 微信端高精度微调核心逻辑
     const inputEl = document.getElementById('beans');
     const MAX = parseFloat(inputEl.max);
     const MIN = parseFloat(inputEl.min);
@@ -219,7 +219,6 @@
         }
     }
 
-    // 方案底层数据
     const recipes = {
         "classic": { hasDynamicRatio: true, temp: "91℃ - 93℃", gear: "V60 / 蛋糕滤杯", grind: "中等研磨", time: "2'15\" - 2'45\"", flavor: "酸甜均衡，层次感清晰，容错率极高，适合日常基准测试。", steps: [ { name: "第一段 (闷蒸)", percentage: 0.20, note: "充分打湿粉床，闷蒸30秒，释放二氧化碳。" }, { name: "第二段 (核心萃取)", percentage: 0.40, note: "向外绕圈，稳定水流，逼出中段高甜感。" }, { name: "第三段 (尾段稀释)", percentage: 0.40, note: "平稳中心注水，避免过度扰动引起尾段苦涩。" } ] },
         "four_six": { hasDynamicRatio: false, fixedRatio: 15, temp: "92℃ - 93℃", gear: "Hario V60", grind: "粗研磨 (粗砂糖感)", time: "3'15\" - 3'30\"", flavor: "高醇厚度与干净度。通过前两段水量平衡酸甜，后三段决定浓度。", steps: [ { name: "第一段 (决定酸度)", percentage: 0.20, note: "前40%的第一段。若想偏甜，可适当减少此段水量。" }, { name: "第二段 (决定甜度)", percentage: 0.20, note: "前40%的第二段。注入完成等待水完全流下（约1'00\"）。" }, { name: "第三段 (提升浓度)", percentage: 0.20, note: "后60%均分三段的开始。每次等水流干后再注下一段。" }, { name: "第四段 (提升浓度)", percentage: 0.20, note: "保持断水节奏，精准对齐克重。" }, { name: "第五段 (最后收尾)", percentage: 0.20, note: "注满最后1/5水量，静置等待滴滤完成。" } ] },
@@ -228,8 +227,29 @@
         "du": { hasDynamicRatio: false, fixedRatio: 15, temp: "94℃ (高温萃取)", gear: "Origami (高流速)", grind: "极细研磨", time: "1'40\" (快打战术)", flavor: "爆炸般的花果香气，极高的萃取率带来扎实的醇厚度与爆发力。", steps: [ { name: "第一段 (快冲闷蒸)", percentage: 0.20, note: "大水流（约6g/s）快速注入，迅速打湿粉床，激活酸质。" }, { name: "第二段 (中心控速)", percentage: 0.3333, note: "放缓水流至4g/s，中心绕小圈，延长接触时间逼出醇厚度。" }, { name: "第三段 (大水流收尾)", percentage: 0.4667, note: "恢复5g/s大水流冲刺至总量，务必在1分40秒内结束冲煮。" } ] }
     };
 
-    function updateRecipeDetailsView() { const recipeKey = document.getElementById('recipe').value; const recipe = recipes[recipeKey]; document.getElementById('viewTemp').innerText = recipe.temp; document.getElementById('viewGear').innerText = recipe.gear; document.getElementById('viewGrind').innerText = recipe.grind; document.getElementById('viewTime').innerText = recipe.time; document.getElementById('viewFlavor').innerText = recipe.flavor; const ratioContainer = document.getElementById('ratioContainer'); if (recipe.hasDynamicRatio) { ratioContainer.style.display = 'block'; } else { ratioContainer.style.display = 'none'; } }
-    function onRecipeChange() { updateRecipeDetailsView(); document.getElementById('resultBox').style.display = 'none'; }
+    function updateRecipeDetailsView() { 
+        const recipeKey = document.getElementById('recipe').value; 
+        const recipe = recipes[recipeKey]; 
+        document.getElementById('viewTemp').innerText = recipe.temp; 
+        document.getElementById('viewGear').innerText = recipe.gear; 
+        document.getElementById('viewGrind').innerText = recipe.grind; 
+        document.getElementById('viewTime').innerText = recipe.time; 
+        document.getElementById('viewFlavor').innerText = recipe.flavor; 
+        const ratioContainer = document.getElementById('ratioContainer'); 
+        if (recipe.hasDynamicRatio) { 
+            ratioContainer.style.display = 'block'; 
+        } else { 
+            ratioContainer.style.display = 'none'; 
+        } 
+    }
+    
+    // 💡 优化点：切换方案时，也让面板自觉保持闭合
+    function onRecipeChange() { 
+        updateRecipeDetailsView(); 
+        document.getElementById('resultBox').style.display = 'none'; 
+        document.getElementById('recipeDetails').removeAttribute('open');
+    }
+    
     function calculateBrew() { const beans = parseFloat(document.getElementById('beans').value); const recipeKey = document.getElementById('recipe').value; const recipe = recipes[recipeKey]; if (!beans || beans <= 0) { alert("请输入正确的咖啡豆克重！"); return; } let activeRatio = recipe.hasDynamicRatio ? parseFloat(document.getElementById('ratio').value) : recipe.fixedRatio; const totalWater = beans * activeRatio; document.getElementById('currentRatio').innerText = `1 : ${activeRatio}`; document.getElementById('totalWater').innerText = totalWater.toFixed(1); const stepsList = document.getElementById('stepsList'); stepsList.innerHTML = ''; let cumulativeWater = 0; recipe.steps.forEach((step) => { const stepWater = totalWater * step.percentage; cumulativeWater += stepWater; const stepDiv = document.createElement('div'); stepDiv.className = 'step'; stepDiv.innerHTML = `<div class="step-title"><span>${step.name}</span><span style="font-size:11px; color:var(--text-muted);">权重 ${(step.percentage * 100).toFixed(0)}%</span></div><div class="step-details">电子秤注水至：<strong style="color:var(--primary-color); font-size:17px;">${cumulativeWater.toFixed(1)}g</strong> <span style="color:var(--text-muted); font-size:13px;">(本段注入 ${stepWater.toFixed(1)}g)</span></div><div class="step-note">${step.note}</div>`; stepsList.appendChild(stepDiv); }); document.getElementById('resultBox').style.display = 'block'; document.getElementById('recipeDetails').removeAttribute('open'); }
     window.onload = updateRecipeDetailsView;
 </script>
