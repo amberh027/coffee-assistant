@@ -1,17 +1,15 @@
 {
-  "name": "Coffee Brewing Assistant",
-  "short_name": "咖啡冲煮助手",
-  "description": "为你精准计算每一阶段手冲咖啡的注水克重",
+  "name": "COFFEE BREWING ASSISTANT",
+  "short_name": "冲煮助手",
   "start_url": "./index.html",
   "display": "standalone",
-  "background-color": "#f4ede4",
-  "theme-color": "#3d2b1f",
+  "background_color": "#f4ede4",
+  "theme_color": "#3d2b1f",
   "icons": [
     {
-      "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f4ede4' rx='24'/><path d='M30 42h34v22c0 9-7 14-17 14s-17-5-17-14V42z' fill='%23ffffff' stroke='%233d2b1f' stroke-width='4' stroke-linejoin='round'/><path d='M64 48h6c3 0 5 2 5 5s-2 5-5 5h-6' fill='none' stroke='%233d2b1f' stroke-width='4' stroke-linecap='round'/><path d='M36 42c0-4 3-8 8-8s8 4 8 8' fill='%23ffffff' stroke='%233d2b1f' stroke-width='4'/><path d='M48 42c0-4 3-8 8-8s8 4 8 8' fill='%23ffffff' stroke='%233d2b1f' stroke-width='4'/><circle cx='41' cy='39' r='2' fill='%233d2b1f'/><circle cx='53' cy='39' r='2' fill='%233d2b1f'/><circle cx='38' cy='49' r='2.5' fill='%233d2b1f'/><circle cx='56' cy='49' r='2.5' fill='%233d2b1f'/><path d='M45 53c1 1 3 1 4 0' fill='none' stroke='%233d2b1f' stroke-width='2' stroke-linecap='round'/><ellipse cx='48' cy='62' rx='5' ry='3.5' fill='%23c68e5a'/></svg>",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any"
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAwBQTFRF////3t7e09PTxsbGtra2p6enpaWlhYWFXV1dTExMRERET09PPj4+NjY2Ly8vLS0tKSkpJiYmIiIiHx8fGxsbGhoaFhYWEBAQDw8PDAwMCgoKCAgIBgYGBQUFBAQEAgICAAAA//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8A/wD//wD/AP//AAAAAAMAAAAGAAAA/wD/AP//AP8A///8m0e1AAAAbXRSTlMAAAEDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaW1xdXl9gYWJjZGVmZ2hpamtsbW7N7fVqAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FBmYFEwYfKTeK6LwAAAGoSURBVDjLzZTXUgMxFEXX9N476Y0A6Y3ee++9pffep6gD//8v9mYgE8gMecg87GfXOfvclZLIv8Zidm69XFw/vXW03N4/f36yWfNf4vE/tP6wBqXp4nF+vXm8WvPfsX0Z89vF8uXpeMof5r8A/rEGlG/LxcWb8Z6ffYvL+A+A36NBaenidg7m7fHzH1GgE/wX8Ie092Z6C/b+rPOnXwA/6OQf0uIezPuzZqP9WcTPAX9Y6/fXuzfO+W7wz8Af0cbeunvunv/0/wH4Y1rvXbvXLg12I/gG8I/peGvu7XFpxG8GvxrUjI6Ph6/98wXAn9LgY6fP9YtW/G7wi0HLcH08NNDN86wLwZ/SYL0+NNCt06vPmhX8WQ2Y9R9o0HygSdfA0YAnZgOemHUPPFrwsxow7x/8UAPmA026Bx5v60wD5v2DH2vAfKBJ98DT67LgRzVgybMekH6jBvL3akD6zRooP8gC0m/WQPqNBlwTf/0FpD/IAtJv1IDLwZ8B/wD+DOf9Yf8G+OfwZzXgctZtwD8Hfy8L6vG16V/6A++M26gDAnXlAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDI2LTA1LTE5VDE5OjMxOjMxKzAwOjAwwhp3ZQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyNi0wNS0xOVQxOTozMTozMSswMDowMCE6I8IAAAAIdEVYdHNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmda773CAAAAGHRFWHRUaHVtYjo6RG9jdW1lbnQ6OlBhZ2VzADFpbpg0AAAAF3RFWHRUaHVtYjo6SW1hZ2U6OkhlaWdodAAzMmMcgB8AAAAWdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgAMzInBi7AAAAFfEVYdFRodW1iOjpNaW1ldHlwZQBpbWFnZS9wbmc/RbgAAAAXdRFWHRUaHVtYjo6TVRpbWUrU3RhdHVzAE9LDYvWlgAAABF0RVh0VGh1bWI6OlNpemUAMi40S0JD6mHwAAAAGXRFWHRUaHVtYjo6VVJJAGZpbGU6Ly8vdG1wLwubPhMAAAAASUVORK5CYII=",
+      "sizes": "32x32",
+      "type": "image/png"
     }
   ]
 }
