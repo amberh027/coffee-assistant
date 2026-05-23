@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☕️ COFFEE BREWING ASSISTANT · 咖啡冲煮助手 v2</title>
+    <title>☕️ COFFEE BREWING ASSISTANT · 咖啡冲煮助手 v3.1</title>
     
-    <link rel="manifest" href="./manifest.json">
+    <link rel="manifest" href="./manifest.json?v=3.1">
+    
     <meta name="theme-color" content="#3d2b1f">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAwBQTFRF////3t7e09PTxsbGtra2p6enpaWlhYWFXV1dTExMRERET09PPj4+NjY2Ly8vLS0tKSkpJiYmIiIiHx8fGxsbGhoaFhYWEBAQDw8PDAwMCgoKCAgIBgYGBQUFBAQEAgICAAAA//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8A/wD//wD/AP//AAAAAAMAAAAGAAAA/wD/AP//AP8A///8m0e1AAAAbXRSTlMAAAEDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaW1xdXl9gYWJjZGVmZ2hpamtsbW7N7fVqAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FBmYFEwYfKTeK6LwAAAGoSURBVDjLzZTXUgMxFEXX9N476Y0A6Y3ee++9pffep6gD//8v9mYgE8gMecg87GfXOfvclZLIv8Zidm69XFw/vXW03N4/f36yWfNf4vE/tP6wBqXp4nF+vXm8WvPfsX0Z89vF8uXpeMof5r8A/rEGlG/LxcWb8Z6ffYvL+A+A36NBaenidg7m7fHzH1GgE/wX8Ie092Z6C/b+rPOnXwA/6OQf0uIezPuzZqP9WcTPAX9Y6/fXuzfO+W7wz8Af0cbeunvunv/0/wH4Y1rvXbvXLg12I/gG8I/peGvu7XFpxG8GvxrUjI6Ph6/98wXAn9LgY6fP9YtW/G7wi0HLcH08NNDN86wLwZ/SYL0+NNCt06vPmhX8WQ2Y9R9o0HygSdfA0YAnZgOemHUPPFrwsxow7x/8UAPmA026Bx5v60wD5v2DH2vAfKBJ98DT67LgRzVgybMekH6jBvL3akD6zRooP8gC0m/WQPqNBlwTf/0FpD/IAtJv1IDLwZ8B/wD+DOf9Yf8G+OfwZzXgctZtwD8Hfy8L6vG16V/6A++M26gDAnXlAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDI2LTA1LTE5VDE5OjMxOjMxKzAwOjAwwhp3ZQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyNi0wNS0xOVQxOTozMTozMSswMDowMCE6I8IAAAAIdEVYdHNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmda773CAAAAGHRFWHRUaHVtYjo6RG9jdW1lbnQ6OlBhZ2VzADFpbpg0AAAAF3RFWHRUaHVtYjo6SW1hZ2U6OkhlaWdodAAzMmMcgB8AAAAWdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgAMzInBi7AAAAFfEVYdFRodW1iOjpNaW1ldHlwZQBpbWFnZS9wbmc/RbgAAAAXdRFWHRUaHVtYjo6TVRpbWUrU3RhdHVzAE9LDYvWlgAAABF0RVh0VGh1bWI6OlNpemUAMi40S0JD6mHwAAAAGXRFWHRUaHVtYjo6VVJJAGZpbGU6Ly8vdG1wLwubPhMAAAAASUVORK5CYII=">
-    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAwBQTFRF////3t7e09PTxsbGtra2p6enpaWlhYWFXV1dTExMRERET09PPj4+NjY2Ly8vLS0tKSkpJiYmIiIiHx8fGxsbGhoaFhYWEBAQDw8PDAwMCgoKCAgIBgYGBQUFBAQEAgICAAAA//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8A/wD//wD/AP//AAAAAAMAAAAGAAAA/wD/AP//AP8A///8m0e1AAAAbXRSTlMAAAEDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaW1xdXl9gYWJjZGVmZ2hpamtsbW7N7fVqAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FBmYFEwYfKTeK6LwAAAGoSURBVDjLzZTXUgMxFEXX9N476Y0A6Y3ee++9pffep6gD//8v9mYgE8gMecg87GfXOfvclZLIv8Zidm69XFw/vXW03N4/f36yWfNf4vE/tP6wBqXp4nF+vXm8WvPfsX0Z89vF8uXpeMof5r8A/rEGlG/LxcWb8Z6ffYvL+A+A36NBaenidg7m7fHzH1GgE/wX8Ie092Z6C/b+rPOnXwA/6OQf0uIezPuzZqP9WcTPAX9Y6/fXuzfO+W7wz8Af0cbeunvunv/0/wH4Y1rvXbvXLg12I/gG8I/peGvu7XFpxG8GvxrUjI6Ph6/98wXAn9LgY6fP9YtW/G7wi0HLcH08NNDN86wLwZ/SYL0+NNCt06vPmhX8WQ2Y9R9o0HygSdfA0YAnZgOemHUPPFrwsxow7x/8UAPmA026Bx5v60wD5v2DH2vAfKBJ98DT67LgRzVgybMekH6jBvL3akD6zRooP8gC0m/WQPqNBlwTf/0FpD/IAtJv1IDLwZ8B/wD+DOf9Yf8G+OfwZzXgctZtwD8Hfy8L6vG16V/6A++M26gDAnXlAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDI2LTA1LTE5VDE5OjMxOjMxKzAwOjAwwhp3ZQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyNi0wNS0xOVQxOTozMTozMSswMDowMCE6I8IAAAAIdEVYdHNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmda773CAAAAGHRFWHRUaHVtYjo6RG9jdW1lbnQ6OlBhZ2VzADFpbpg0AAAAF3RFWHRUaHVtYjo6SW1hZ2U6OkhlaWdodAAzMmMcgB8AAAAWdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgAMzInBi7AAAAFfEVYdFRodW1iOjpNaW1ldHlwZQBpbWFnZS9wbmc/RbgAAAAXdRFWHRUaHVtYjo6TVRpbWUrU3RhdHVzAE9LDYvWlgAAABF0RVh0VGh1bWI6OlNpemUAMi40S0JD6mHwAAAAGXRFWHRUaHVtYjo6VVJJAGZpbGU6Ly8vdG1wLwubPhMAAAAASUVORK5CYII=">
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAwBQTFRF////3t7e09PTxsbGtra2p6enpaWlhYWFXV1dTExMRERET09PPj4+NjY2Ly8vLS0tKSkpJiYmIiIiHx8fGxsbGhoaFhYWEBAQDw8PDAwMCgoKCAgIBgYGBQUFBAQEAgICAAAA//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8A/wD//wD/AP//AAAAAAMAAAAGAAAA/wD/AP//AP8A///8m0e1AAAAbXRSTlMAAAEDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaW1xdXl9gYWJjZGVmZ2hpamtsbW7N7fVqAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FBmYFEwYfKTeK6LwAAAGoSURBVDjLzZTXUgMxFEXX9N476Y0A6Y3ee++9pffep6gD//8v9mYgE8gMecg87GfXOfvclZLIv8Zidm69XFw/vXW03N4/f36yWfNf4vE/tP6wBqXp4nF+vXm8WvPfsX0Z89vF8uXpeMof5r8A/rEGlG/LxcWb8Z6ffYvL+A+A36NBaenidg7m7fHzH1GgE/wX8Ie092Z6C/b+rPOnXwA/6OQf0uIezPuzZqP9WcTPAX9Y6/fXuzfO+W7wz8Af0cbeunvunv/0/wH4Y1rvXbvXLg12I/gG8I/peGvu7XFpxG8GvxrUjI6Ph6/98wXAn9LgY6fP9YtW/G7wi0HLcH08NNDN86wLwZ/SYL0+NNCt06vPmhX8WQ2Y9R9o0HygSdfA0YAnZgOemHUPPFrwsxow7x/8UAPmA026Bx5v60wD5v2DH2vAfKBJ98DT67LgRzVgybMekH6jBvL3akD6zRooP8gC0m/WQPqNBlwTf/0FpD/IAtJv1IDLwZ8B/wD+DOf9Yf8G+OfwZzXgctZtwD8Hfy8L6vG16V/6A++M26gDAnXlAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDI2LTA1LTE5VDE5OjMxOjMxKzAwOjAwwhp3ZQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyNi0wNS0xOVQxOTozMTozMSswMDowMCE6I8IAAAAIdEVYdHNvZnR3YXJlAHd随dG5jYXBlLm9yZ1p773CAAAAGHRFWHRUaHVtYjo6RG9jdW1lbnQ6OlBhZ2VzADFpbpg0AAAAF3RFWHRUaHVtYjo6SW1hZ2U6OkhlaWdodAAzMmMcgB8AAAAWdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgAMzInBi7AAAAFfEVYdFRodW1iOjpNaW1ldHlwZQBpbWFnZS9wbmc/RbgAAAAXdRFWHRUaHVtYjo6TVRpbWUrU3RhdHVzAE9LDYvWlgAAABF0RVh0VGh1bWI6OlNpemUAMi40S0JD6mHwAAAAGXRFWHRUaHVtYjo6VVJJAGZpbGU6Ly8vdG1wLwubPhMAAAAASUVORK5CYII=">
 
     <style>
         :root {
@@ -59,16 +60,93 @@
             z-index: 2;
         }
 
+        .label-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
         label {
             display: block;
-            margin-bottom: 10px;
             font-weight: 700;
             color: var(--primary-color);
             font-size: 14px;
             letter-spacing: 0.5px;
         }
 
-        .input-stepper-wrapper, .select-wrapper {
+        .beans-display {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--accent-color);
+            background: #faf7f2;
+            padding: 2px 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* 🆕 磨豆机微调刻度滚轮样式 */
+        .grinder-dial-container {
+            position: relative;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 12px 16px;
+            box-shadow: inset 0 2px 6px rgba(61, 43, 31, 0.02);
+        }
+
+        /* 模拟磨豆机物理刻度线背景 */
+        .grinder-ticks {
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            top: 10px;
+            height: 8px;
+            background: linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+            background-size: 4.16% 100%; /* 精准平铺刻度感 */
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 36px;
+            background: transparent;
+            outline: none;
+            margin: 0;
+            cursor: ew-resize;
+        }
+
+        /* 微信/Safari/Chrome 滑块样式优化 */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 4px solid var(--bg-color);
+            box-shadow: 0 3px 8px rgba(61, 43, 31, 0.3);
+            transition: transform 0.1s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:active {
+            transform: scale(1.2);
+            background: var(--accent-color);
+        }
+
+        /* Firefox 滑块优化 */
+        input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 4px solid var(--bg-color);
+            box-shadow: 0 3px 8px rgba(61, 43, 31, 0.3);
+        }
+
+        .select-wrapper {
             display: flex;
             align-items: center;
             border: 1px solid var(--border-color);
@@ -81,53 +159,10 @@
             height: 56px;
         }
 
-        .input-stepper-wrapper:focus-within, .select-wrapper:focus-within {
+        .select-wrapper:focus-within {
             border-color: var(--primary-color);
             box-shadow: 0 0 0 4px rgba(61, 43, 31, 0.05);
         }
-
-        input[type="number"] {
-            flex-grow: 1;
-            padding: 0 18px;
-            height: 100%;
-            border: none;
-            font-size: 16px;
-            color: var(--text-main);
-            background: transparent;
-            outline: none;
-            -moz-appearance: textfield;
-        }
-        input[type="number"]::-webkit-inner-spin-button,
-        input[type="number"]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        .stepper-buttons {
-            display: flex;
-            flex-direction: column;
-            width: 48px;
-            height: 100%;
-            border-left: 1px solid var(--border-color);
-            flex-shrink: 0;
-        }
-
-        .step-btn {
-            height: 28px;
-            background: #fdfcfb;
-            border: none;
-            color: var(--primary-color);
-            font-size: 10px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.15s;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .step-btn:active { background: #f4ede4; }
-        .step-btn.up { border-bottom: 1px solid var(--border-color); }
 
         select { 
             width: 100%; 
@@ -212,13 +247,13 @@
     </div>
     
     <div class="input-group">
-        <label for="beans">咖啡粉重量 (克):</label>
-        <div class="input-stepper-wrapper">
-            <input type="number" id="beans" value="15.0" min="5" max="50" step="0.1" inputmode="decimal">
-            <div class="stepper-buttons">
-                <button class="step-btn up" onclick="adjustBeans(0.1)" type="button" aria-label="增加0.1克">▲</button>
-                <button class="step-btn down" onclick="adjustBeans(-0.1)" type="button" aria-label="减少0.1克">▼</button>
-            </div>
+        <div class="label-header">
+            <label for="beans">咖啡粉重量:</label>
+            <span class="beans-display"><span id="beansValue">15.0</span> 克</span>
+        </div>
+        <div class="grinder-dial-container">
+            <div class="grinder-ticks"></div>
+            <input type="range" id="beans" min="5" max="50" step="0.1" value="15.0" oninput="syncBeansValue(this.value)">
         </div>
     </div>
 
@@ -252,24 +287,18 @@
 </div>
 
 <script>
+    // 🟢 升级 Service Worker 缓存控制版本号
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./sw.js')
-                .then(reg => console.log('PWA 离线管家就位。'))
+            navigator.serviceWorker.register('./sw.js?v=3.1')
+                .then(reg => console.log('PWA 离线管家已强行重构升级。'))
                 .catch(err => console.log(err));
         });
     }
 
-    const inputEl = document.getElementById('beans');
-    const MAX = parseFloat(inputEl.max);
-    const MIN = parseFloat(inputEl.min);
-
-    function adjustBeans(delta) {
-        let currentVal = parseFloat(inputEl.value) || MIN;
-        let newVal = Number((currentVal + delta).toFixed(1));
-        if (newVal >= MIN && newVal <= MAX) {
-            inputEl.value = newVal.toFixed(1);
-        }
+    // 🔄 实时同步滚轮数据到数字气泡上
+    function syncBeansValue(val) {
+        document.getElementById('beansValue').innerText = parseFloat(val).toFixed(1);
     }
 
     const recipes = {
@@ -277,7 +306,7 @@
         "four_six": { hasDynamicRatio: false, fixedRatio: 15, temp: "92℃ - 93℃", gear: "Hario V60", grind: "粗研磨 (粗砂糖感)", time: "3'15\" - 3'30\"", flavor: "高醇厚度与干净度。通过前两段水量平衡酸甜，后三段决定浓度。", steps: [ { name: "第一段 (决定酸度)", percentage: 0.20, note: "前40%的第一段。若想偏甜，可适当减少此段水量。" }, { name: "第二段 (决定甜度)", percentage: 0.20, note: "前40%的第二段。注入完成等待水完全流下（约1'00\"）。" }, { name: "第三段 (提升浓度)", percentage: 0.20, note: "后60%均分三段的开始。每次等水流干后再注下一段。" }, { name: "第四段 (提升浓度)", percentage: 0.20, note: "保持断水节奏，精准对齐克重。" }, { name: "第五段 (最后收尾)", percentage: 0.20, note: "注满最后1/5水量，静置等待滴滤完成。" } ] },
         "one_pour": { hasDynamicRatio: false, fixedRatio: 16, temp: "90℃ - 92℃", gear: "V60 / Origami", grind: "中细研磨", time: "1'50\" - 2'10\"", flavor: "口感极为干净、通透，没有多次断水带来的杂质扰动。", steps: [ { name: "第一段 (充分闷蒸)", percentage: 0.20, note: "使用两倍于粉重的水量充分浸润，闷蒸30秒。" }, { name: "第二段 (一刀流拉满)", percentage: 0.80, note: "中心温柔注水，不间断地缓慢提高水位至总克重，随后静置。" } ] },
         "carlos": { hasDynamicRatio: false, fixedRatio: 16.1, temp: "91℃", gear: "Orea V3 / 平底滤杯", grind: "中粗研磨", time: "2'30\" (每段严格隔30s)", flavor: "极致的物理均匀度，风味极为清晰，呈现极其高雅的甜感。", steps: [ { name: "第一段 (0:00 闷蒸)", percentage: 0.20, note: "精确绕圈，打湿每一颗粉末。" }, { name: "第二段 (0:30 注水)", percentage: 0.20, note: "保持固定的注水高度和画圈半径。" }, { name: "第三段 (1:00 注水)", percentage: 0.20, note: "严格控制水流力度，避免过度扰动。" }, { name: "第四段 (1:30 注水)", percentage: 0.20, note: "细水流稳定推进。" }, { name: "第五段 (2:00 精准收尾)", percentage: 0.20, note: "最后一段注入，等待滤滤流干。" } ] },
-        "du": { hasDynamicRatio: false, fixedRatio: 15, temp: "94℃ (高温萃取)", gear: "Origami (高流速)", grind: "极细研磨", time: "1'40\" (快打战术)", flavor: "爆炸般的花果香气，极高的萃取率带来扎实的醇厚度与爆发力。", steps: [ { name: "第一段 (快冲闷蒸)", percentage: 0.20, note: "大水流（约6g/s）快速注入，迅速打湿粉床，激活酸质。" }, { name: "第二段 (中心控速)", percentage: 0.3333, note: "放缓水流至4g/s，中心绕小圈，延长接触时间逼出醇厚度." }, { name: "第三段 (大水流收尾)", percentage: 0.4667, note: "恢复5g/s大水流冲刺至总量，务必在1分40秒内结束冲煮。" } ] }
+        "du": { hasDynamicRatio: false, fixedRatio: 15, temp: "94℃ (高温萃取)", gear: "Origami (高流速)", grind: "极细研磨", time: "1'40\" (快打战术)", flavor: "爆炸般的花果香气，极高的萃取率带来扎实的醇厚度与爆发力。", steps: [ { name: "第一段 (快冲闷蒸)", percentage: 0.20, note: "大水流（约6g/s）快速注入，迅速打湿粉床，激活酸质。" }, { name: "第二段 (中心控速)", percentage: 0.3333, note: "放缓水流至4g/s，中心绕小圈，延长接触时间逼出醇厚度。" }, { name: "第三段 (大水流收尾)", percentage: 0.4667, note: "恢复5g/s大水流冲刺至总量，务必在1分40秒内结束冲煮。" } ] }
     };
 
     function updateRecipeDetailsView() { 
@@ -307,7 +336,7 @@
         const beans = parseFloat(document.getElementById('beans').value); 
         const recipeKey = document.getElementById('recipe').value; 
         const recipe = recipes[recipeKey]; 
-        if (!beans || beans <= 0) { alert("请输入正确的咖啡豆克重！"); return; } 
+        if (!beans || beans <= 0) { alert("请滑动选择正确的咖啡豆克重！"); return; } 
         
         let activeRatio = recipe.hasDynamicRatio ? parseFloat(document.getElementById('ratio').value) : recipe.fixedRatio; 
         const totalWater = beans * activeRatio; 
@@ -323,7 +352,8 @@
             cumulativeWater += stepWater; 
             const stepDiv = document.createElement('div'); 
             stepDiv.className = 'step'; 
-            stepDiv.innerHTML = `<div class="step-title"><span>${step.name}</span><span style="font-size:11px; color:var(--text-muted);">权重 ${(step.percentage * 100).toFixed(0)}%</span></div><div class="step-details">电子秤注水至：<strong style="color:var(--primary-color); font-size:17px;">${cumulativeWater.toFixed(1)}g</strong> <span style="color:var(--text-muted); font-size:13px;">(本段注入 ${stepWater.toFixed(1)}g)</span></div><div class="step-note">${step.note}</div>`; 
+            // ✂️ 已经彻底去掉“电子秤注水”，看板直接显示“注水至：”
+            stepDiv.innerHTML = `<div class="step-title"><span>${step.name}</span><span style="font-size:11px; color:var(--text-muted);">权重 ${(step.percentage * 100).toFixed(0)}%</span></div><div class="step-details">注水至：<strong style="color:var(--primary-color); font-size:17px;">${cumulativeWater.toFixed(1)}g</strong> <span style="color:var(--text-muted); font-size:13px;">(本段注入 ${stepWater.toFixed(1)}g)</span></div><div class="step-note">${step.note}</div>`; 
             stepsList.appendChild(stepDiv); 
         }); 
         
@@ -332,6 +362,8 @@
     }
 
     window.onload = function() {
+        // 初始化时同步滑块默认值到数值显示区
+        syncBeansValue(document.getElementById('beans').value);
         updateRecipeDetailsView();
         document.getElementById('recipeDetails').removeAttribute('open');
     };
