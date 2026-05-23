@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☕️ COFFEE BREWING ASSISTANT · 咖啡冲煮助手 v3.1</title>
+    <title>☕️ COFFEE BREWING ASSISTANT · 咖啡冲煮助手 v3.2</title>
     
-    <link rel="manifest" href="./manifest.json?v=3.1">
+    <link rel="manifest" href="./manifest.json?v=3.2">
     
     <meta name="theme-color" content="#3d2b1f">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -60,92 +60,146 @@
             z-index: 2;
         }
 
-        .label-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
         label {
             display: block;
+            margin-bottom: 12px;
             font-weight: 700;
             color: var(--primary-color);
             font-size: 14px;
             letter-spacing: 0.5px;
         }
 
-        .beans-display {
-            font-size: 18px;
+        /* 🆕 方案三：通透光影毛玻璃面板结构 */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(235, 220, 208, 0.7);
+            border-radius: 24px;
+            padding: 24px 20px;
+            box-shadow: 0 8px 32px rgba(61, 43, 31, 0.03);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        /* 居中超大数字显示与铅笔图标组 */
+        .center-display-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            height: 48px;
+            user-select: none;
+        }
+
+        .beans-large-text {
+            font-size: 38px;
             font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .beans-unit {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-top: 12px;
+        }
+
+        /* 方案二：精致小铅笔图标 */
+        .edit-pencil-icon {
+            width: 20px;
+            height: 20px;
             color: var(--accent-color);
-            background: #faf7f2;
-            padding: 2px 10px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
+            opacity: 0.8;
+            transition: opacity 0.2s, transform 0.2s;
+            margin-top: 4px;
+        }
+        .center-display-wrapper:hover .edit-pencil-icon {
+            opacity: 1;
+            transform: scale(1.1);
         }
 
-        /* 🆕 磨豆机微调刻度滚轮样式 */
-        .grinder-dial-container {
-            position: relative;
+        /* 隐藏的手动输入框（点击数字时切出） */
+        .beans-input-hidden {
+            display: none;
+            width: 120px;
+            height: 42px;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-align: center;
+            border: 2px solid var(--accent-color);
+            border-radius: 12px;
             background: #fff;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 12px 16px;
-            box-shadow: inset 0 2px 6px rgba(61, 43, 31, 0.02);
+            outline: none;
+            box-shadow: 0 4px 12px rgba(198, 142, 90, 0.1);
         }
 
-        /* 模拟磨豆机物理刻度线背景 */
-        .grinder-ticks {
+        /* 缩小精致化横向滚轮轨道 */
+        .grinder-slider-box {
+            position: relative;
+            width: 100%;
+            padding: 4px 0;
+        }
+
+        /* 极其纤细精密的背景刻度线 */
+        .grinder-fine-ticks {
             position: absolute;
-            left: 20px;
-            right: 20px;
-            top: 10px;
-            height: 8px;
+            left: 10px;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 6px;
             background: linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
-            background-size: 4.16% 100%; /* 精准平铺刻度感 */
-            opacity: 0.7;
+            background-size: 2.22% 100%; /* 适配更密集的物理刻度感 */
+            opacity: 0.5;
             pointer-events: none;
         }
 
         input[type="range"] {
             -webkit-appearance: none;
             width: 100%;
-            height: 36px;
+            height: 24px;
             background: transparent;
             outline: none;
             margin: 0;
             cursor: ew-resize;
+            position: relative;
+            z-index: 2;
         }
 
-        /* 微信/Safari/Chrome 滑块样式优化 */
+        /* 高级通透滑块触点 (Thumb) */
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
+            width: 14px;
+            height: 26px;
+            border-radius: 4px;
             background: var(--primary-color);
-            border: 4px solid var(--bg-color);
-            box-shadow: 0 3px 8px rgba(61, 43, 31, 0.3);
-            transition: transform 0.1s;
+            box-shadow: 0 2px 6px rgba(61, 43, 31, 0.4);
+            transition: transform 0.1s, background-color 0.1s;
         }
 
         input[type="range"]::-webkit-slider-thumb:active {
-            transform: scale(1.2);
+            transform: scale(1.15);
             background: var(--accent-color);
         }
 
-        /* Firefox 滑块优化 */
         input[type="range"]::-moz-range-thumb {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
+            width: 14px;
+            height: 26px;
+            border-radius: 4px;
             background: var(--primary-color);
-            border: 4px solid var(--bg-color);
-            box-shadow: 0 3px 8px rgba(61, 43, 31, 0.3);
+            border: none;
+            box-shadow: 0 2px 6px rgba(61, 43, 31, 0.4);
         }
 
+        /* 原有其他选择器及布局样式 */
         .select-wrapper {
             display: flex;
             align-items: center;
@@ -179,9 +233,6 @@
             appearance: none;
         }
 
-        .select-wrapper {
-            position: relative;
-        }
         .select-wrapper::after {
             content: "▼";
             font-size: 10px;
@@ -247,13 +298,22 @@
     </div>
     
     <div class="input-group">
-        <div class="label-header">
-            <label for="beans">咖啡粉重量:</label>
-            <span class="beans-display"><span id="beansValue">15.0</span> 克</span>
-        </div>
-        <div class="grinder-dial-container">
-            <div class="grinder-ticks"></div>
-            <input type="range" id="beans" min="5" max="50" step="0.1" value="15.0" oninput="syncBeansValue(this.value)">
+        <label>咖啡粉重量:</label>
+        <div class="glass-panel">
+            <div class="center-display-wrapper" id="displayWrapper" onclick="enableManualInput()">
+                <span class="beans-large-text" id="beansValue">15.0</span>
+                <span class="beans-unit">克</span>
+                <svg class="edit-pencil-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                    <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4Z"></path>
+                </svg>
+            </div>
+            <input type="number" id="beansInput" class="beans-input-hidden" step="0.1" min="5" max="50" onblur="disableManualInput()">
+
+            <div class="grinder-slider-box">
+                <div class="grinder-fine-ticks"></div>
+                <input type="range" id="beansSlider" min="5" max="50" step="0.1" value="15.0" oninput="syncFromSlider(this.value)">
+            </div>
         </div>
     </div>
 
@@ -287,18 +347,50 @@
 </div>
 
 <script>
-    // 🟢 升级 Service Worker 缓存控制版本号
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./sw.js?v=3.1')
+            navigator.serviceWorker.register('./sw.js?v=3.2')
                 .then(reg => console.log('PWA 离线管家已强行重构升级。'))
                 .catch(err => console.log(err));
         });
     }
 
-    // 🔄 实时同步滚轮数据到数字气泡上
-    function syncBeansValue(val) {
-        document.getElementById('beansValue').innerText = parseFloat(val).toFixed(1);
+    const sliderEl = document.getElementById('beansSlider');
+    const textEl = document.getElementById('beansValue');
+    const inputEl = document.getElementById('beansInput');
+    const wrapperEl = document.getElementById('displayWrapper');
+
+    // 🔄 1. 拖动滚轮：实时同步数据到居中大字
+    function syncFromSlider(val) {
+        textEl.innerText = parseFloat(val).toFixed(1);
+        inputEl.value = parseFloat(val).toFixed(1);
+    }
+
+    // ⌨️ 2. 点击进入手动填入状态
+    function enableManualInput() {
+        wrapperEl.style.display = 'none';
+        inputEl.style.display = 'block';
+        inputEl.value = textEl.innerText;
+        inputEl.focus();
+    }
+
+    // 🔒 3. 填完失焦：校验范围并自动回弹、同步滚轮
+    function disableManualInput() {
+        let val = parseFloat(inputEl.value);
+        const min = parseFloat(sliderEl.min);
+        const max = parseFloat(sliderEl.max);
+
+        if (isNaN(val) || val < min) val = min;
+        if (val > max) val = max;
+
+        val = Number(val.toFixed(1));
+        
+        // 同步给大字和滑块
+        textEl.innerText = val.toFixed(1);
+        sliderEl.value = val;
+
+        inputEl.style.display = 'none';
+        wrapperEl.style.display = 'flex';
     }
 
     const recipes = {
@@ -333,10 +425,11 @@
     }
     
     function calculateBrew() { 
-        const beans = parseFloat(document.getElementById('beans').value); 
+        // 核心改动：直接抓取当前的 Slider 确定克数
+        const beans = parseFloat(sliderEl.value); 
         const recipeKey = document.getElementById('recipe').value; 
         const recipe = recipes[recipeKey]; 
-        if (!beans || beans <= 0) { alert("请滑动选择正确的咖啡豆克重！"); return; } 
+        if (!beans || beans <= 0) { alert("请确定正确的咖啡豆克重！"); return; } 
         
         let activeRatio = recipe.hasDynamicRatio ? parseFloat(document.getElementById('ratio').value) : recipe.fixedRatio; 
         const totalWater = beans * activeRatio; 
@@ -352,7 +445,6 @@
             cumulativeWater += stepWater; 
             const stepDiv = document.createElement('div'); 
             stepDiv.className = 'step'; 
-            // ✂️ 已经彻底去掉“电子秤注水”，看板直接显示“注水至：”
             stepDiv.innerHTML = `<div class="step-title"><span>${step.name}</span><span style="font-size:11px; color:var(--text-muted);">权重 ${(step.percentage * 100).toFixed(0)}%</span></div><div class="step-details">注水至：<strong style="color:var(--primary-color); font-size:17px;">${cumulativeWater.toFixed(1)}g</strong> <span style="color:var(--text-muted); font-size:13px;">(本段注入 ${stepWater.toFixed(1)}g)</span></div><div class="step-note">${step.note}</div>`; 
             stepsList.appendChild(stepDiv); 
         }); 
@@ -362,8 +454,7 @@
     }
 
     window.onload = function() {
-        // 初始化时同步滑块默认值到数值显示区
-        syncBeansValue(document.getElementById('beans').value);
+        syncFromSlider(sliderEl.value);
         updateRecipeDetailsView();
         document.getElementById('recipeDetails').removeAttribute('open');
     };
